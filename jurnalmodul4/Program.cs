@@ -6,13 +6,32 @@ namespace jurnalmodul4
     {
         static void Main(string[] args)
         {
-            KodeBuah kodeBuah = new KodeBuah();
+            PosisiKarakterGame karakter = new PosisiKarakterGame();
 
-            Console.Write("Masukkan nama buah: ");
-            string buah = Console.ReadLine();
+            while (true)
+            {
+                Console.Write("Tekan tombol (W/S/X, Q untuk keluar): ");
+                char input = Console.ReadKey().KeyChar;
+                Console.WriteLine();
 
-            string kode = kodeBuah.GetKodeBuah(buah);
-            Console.WriteLine($"Kode buah {buah}: {kode}");
+                if (input == 'q' || input == 'Q')
+                {
+                    Console.WriteLine("Game selesai.");
+                    break;
+                }
+                else if (input == 'w' || input == 'W')
+                {
+                    karakter.TombolW();
+                }
+                else if (input == 's' || input == 'S')
+                {
+                    karakter.TombolS();
+                }
+                else if (input == 'x' || input == 'X')
+                {
+                    karakter.TombolX();
+                }
+            }
         }
     }
 }
